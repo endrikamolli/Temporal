@@ -8,11 +8,15 @@ import numpy as np
 url = "https://raw.githubusercontent.com/iantonios/dsc205/refs/heads/main/bike_sharing.csv"
 df = pd.read_csv(url)
 
+df['datetime'] = pd.to_datetime(df['datetime'])
+
+
+# Print the column names to debug
+st.write(df.columns)
+
 # Remove extra spaces in column names (if needed)
 df.columns = df.columns.str.strip()
 
-# Print column names for debugging
-st.write(df.columns)
 
 # Convert the correct datetime column (replace 'datetime' with the correct column name)
 df['datetime'] = pd.to_datetime(df['datetime'])  # or 'YourColumnName' if needed
