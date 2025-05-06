@@ -3,15 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Sample data for demonstration purposes
-data = {
-    'datetime': pd.date_range(start="2020-01-01", periods=500, freq='D'),
-    'cnt': np.random.randint(100, 1000, size=500),
-    'season': np.random.choice([1, 2, 3, 4], size=500)
-}
-
-# Create a dataframe
-df = pd.DataFrame(data)
+# Load the dataset from the URL
+url = "https://raw.githubusercontent.com/iantonios/dsc205/refs/heads/main/bike_sharing.csv"
+df = pd.read_csv(url)
 
 # Convert datetime to pandas datetime format
 df['datetime'] = pd.to_datetime(df['datetime'])
