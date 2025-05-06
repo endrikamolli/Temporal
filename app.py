@@ -67,7 +67,7 @@ elif rolling_option == '14-day average':
     st.pyplot(fig)
 
 elif rolling_option == 'Total ridership by week':
-    df_weekly = df.resample('W').sum()  # Resampling by week
+    df_weekly = df.resample('W').sum()
     fig, ax = plt.subplots()
     ax.plot(df_weekly.index, df_weekly['cnt'], label="Total Weekly Ridership", color='red')
     ax.set_xlabel("Week")
@@ -76,6 +76,6 @@ elif rolling_option == 'Total ridership by week':
     ax.legend()
     st.pyplot(fig)
 
-# Run the app
-if __name__ == "__main__":
-    st.write("Explore the visualizations above!")
+# Final note
+st.write("Explore the visualizations above!")
+
